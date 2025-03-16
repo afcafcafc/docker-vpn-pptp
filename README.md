@@ -25,6 +25,9 @@ docker build -t pptp:latest .
 docker run -d --privileged -p 1723:1723 --name pptp pptp:latest
 docker run -d --privileged --network host --name pptp pptp:latest
 #docker run -d --privileged -p 1723:1723 -v {local_path_to_chap_secrets}:/etc/ppp/chap-secrets mobtitude/vpn-pptp
+docker run -d --privileged -p 500:500/udp -p 4500:4500/udp -p 1701:1701/tcp -p 1701:1701/udp  --name l2tp --restart=always \
+ --env-file /etc/l2tp.env \
+ oskernel/l2tp
 ````
 
 Edit your local _chap-secrets_ file, to add or modify VPN users whenever you need.
