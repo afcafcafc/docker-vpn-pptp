@@ -1,5 +1,7 @@
 # VPN (PPTP) for Docker
-
+docker build -t pptp:latest .
+docker run -d --privileged -p 1723:1723 --name pptp pptp:latest
+docker run -d --privileged --network host --name pptp pptp:latest
 This is a docker image with simple VPN (PPTP) server with _chap-secrets_ authentication.
 
 PPTP uses _/etc/ppp/chap-secrets_ file to authenticate VPN users.
