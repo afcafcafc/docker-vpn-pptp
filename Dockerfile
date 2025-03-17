@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM oskernel/l2tp
 MAINTAINER Przemek Szalko <przemek@mobtitude.com>
 
 ENV DEBIAN_FRONTEND noninteractive
